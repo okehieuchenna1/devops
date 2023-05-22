@@ -13,7 +13,7 @@ sudo -i
 
 
 
-
+## Create a sh file on ubuntu
 
 #!/bin/bash
 # common.sh
@@ -114,3 +114,18 @@ apt-mark hold kubelet kubeadm kubectl
 systemctl daemon-reload
 systemctl start kubelet
 systemctl enable kubelet.service
+
+
+
+# FOR MASTER NODE
+
+sudo kubeadm init
+
+
+# FOR SLAVE NODES
+#My AWS Kubernetes Cluster
+kubeadm join 172.31.16.208:6443 --token 1of0jv.gdsphv1m8xi7pz5r \
+        --discovery-token-ca-cert-hash sha256:251f7cdf5da6ab4940cb9c66ea40145ec9261865a1c9cd08cab478bf01f6659c 
+        
+
+
