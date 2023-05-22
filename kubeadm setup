@@ -117,6 +117,34 @@ systemctl enable kubelet.service
 
 
 
+
+
+
+
+
+
+# If you get errors of kubeadm, kubectl, kubelet not available,
+#Execute the following commands one by one:
+
+1) apt-get update && apt-get install -y apt-transport-https curl
+
+2) # curl -s https://packages.cloud.google.com/apt/doc/apt-key.gpg | apt-key add -
+
+3) # cat <<EOF >/etc/apt/sources.list.d/kubernetes.list
+
+deb http://apt.kubernetes.io/ kubernetes-xenial main
+
+EOF
+
+4) # apt-get update
+
+
+
+
+
+
+
+
 # FOR MASTER NODE
 
 sudo kubeadm init
